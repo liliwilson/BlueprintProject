@@ -40,9 +40,8 @@
         android:id="@+id/textView4"
         android:layout_width="0dp"
         android:layout_height="66dp"
-
         android:layout_marginTop="4dp"
-        android:text="Did you walk or bike instead of riding your personal car? How many miles did you walk/bike?"
+        android:text="How many miles did you drive this week?"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -52,7 +51,7 @@
         android:layout_width="0dp"
         android:layout_height="67dp"
         android:layout_marginTop="4dp"
-        android:text="Question 3"
+        android:text="How many non-vegetarian meals did you have this week?"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +62,7 @@
         android:layout_width="0dp"
         android:layout_height="75dp"
         android:layout_marginTop="4dp"
-        android:text="Question 4"
+        android:text="How many loads of laundry did you run this week?"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,7 +73,7 @@
         android:layout_width="0dp"
         android:layout_height="62dp"
         android:layout_marginTop="4dp"
-        android:text="Question 5"
+        android:text="How long were your showers this week in total? (In minutes)"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
