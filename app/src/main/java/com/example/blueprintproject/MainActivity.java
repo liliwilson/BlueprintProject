@@ -2,11 +2,16 @@ package com.example.blueprintproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -15,6 +20,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -24,10 +30,13 @@ import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
+    ArrayList<String> historyList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
+            loadData();
 
             EditText answerText1 = findViewById(R.id.answer1);
             EditText answerText2 = findViewById(R.id.answer2);
@@ -62,34 +71,21 @@ public class MainActivity extends AppCompatActivity {
                         float shower = (float) Math.round((float) (number4 * 1.95) * 100) / 100;
                         float total = (float) Math.round(transit + bottles + laundry + shower);
 
-                        testText.setText("You emitted " + transit + " pounds of CO2 from transit, " + bottles + " pounds of CO2 from plastic bottles " + laundry + " pounds of CO2 from laundry, and " + shower + " pounds from showering!"
-                                + "\n" + "That's a total of " + total + " pounds for the week.");
+                        testText.setText("You emitted approximately " + transit + " pounds of CO2 from transit, " + bottles + " pounds of CO2 from plastic bottles, " + laundry + " pounds of CO2 from laundry, and " + shower + " pounds of CO2 from showering!"
+                                + "\n" + "That's a total of about " + total + " pounds for the week.");
 
-                        // save a json
-                        JSONObject jsonObject = new JSONObject();
-                        jsonObject.put("Answer1", number1);
-                        jsonObject.put("Answer2", number2);
-                        jsonObject.put("Answer3", number3);
-                        jsonObject.put("Answer4", number4);
+                        historyList.add(total + " pounds for the week.");
+                        saveData();
+                        // temporarily making this button take u to a new view as a test
+                        startHistory(historyList);
 
-                        // get date
-                        Date date = Calendar.getInstance().getTime();
-                        DateFormat dateFormat = new SimpleDateFormat("yyyy_mm_dd hh_mm_ss");
-                        String filename = dateFormat.format(date) + ".json";
 
-                        // save file
-                        String userString = jsonObject.toString();
-                        File file = new File(directory, filename);
-                        FileWriter fileWriter = new FileWriter(file);
-                        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-                        bufferedWriter.write(userString);
-                        bufferedWriter.close();
-
-                    } catch (NumberFormatException | JSONException | IOException e) {
+                    } catch (NumberFormatException e) {
                         testText.setText("Double check - it looks like you didn't enter a number somewhere!");
                     }
                 }
             });
+
             reset.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -97,13 +93,37 @@ public class MainActivity extends AppCompatActivity {
                 answerText2.setText("");
                 answerText3.setText("");
                 answerText4.setText("");
-//                answer1.setText("");
-//                testText.setText("");
-//                testText.setText("");
-//                testText.setText("");
+                testText.setText("");
             }
         });
     }
+
+    public void startHistory(ArrayList<String> historyList) {
+        Intent historyActivityIntent = new Intent(this, HistoryActivity.class);
+        historyActivityIntent.putExtra("history", historyList);
+        this.startActivity(historyActivityIntent);
+    }
+
+    private void saveData() {
+        SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(historyList);
+        editor.putString("task list", json);
+        editor.apply();
+    }
+
+    private void loadData() {
+        SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString("task list", null);
+        Type type = new TypeToken<ArrayList<String>>() {}.getType();
+        historyList = gson.fromJson(json, type);
+        if (historyList == null) {
+            historyList = new ArrayList<>();
+        }
+    }
+
 
 }
 
