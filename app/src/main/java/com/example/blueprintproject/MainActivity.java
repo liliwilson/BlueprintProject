@@ -71,28 +71,8 @@ public class MainActivity extends AppCompatActivity {
                         float shower = (float) Math.round((float) (number4 * 1.95) * 100) / 100;
                         float total = (float) Math.round(transit + bottles + laundry + shower);
 
-                        testText.setText("You emitted " + transit + " pounds of CO2 from transit, " + bottles + " pounds of CO2 from plastic bottles " + laundry + " pounds of CO2 from laundry, and " + shower + " pounds from showering!"
-                                + "\n" + "That's a total of " + total + " pounds for the week.");
-    /*
-                        // save a json
-                        JSONObject jsonObject = new JSONObject();
-                        jsonObject.put("Answer1", number1);
-                        jsonObject.put("Answer2", number2);
-                        jsonObject.put("Answer3", number3);
-                        jsonObject.put("Answer4", number4);
-
-                        // get date
-                        Date date = Calendar.getInstance().getTime();
-                        DateFormat dateFormat = new SimpleDateFormat("yyyy_mm_dd hh_mm_ss");
-                        String filename = dateFormat.format(date) + ".json";
-
-                        // save file
-                        String userString = jsonObject.toString();
-                        File file = new File(directory, filename);
-                        FileWriter fileWriter = new FileWriter(file);
-                        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-                        bufferedWriter.write(userString);
-                        bufferedWriter.close(); */
+                        testText.setText("You emitted approximately " + transit + " pounds of CO2 from transit, " + bottles + " pounds of CO2 from plastic bottles, " + laundry + " pounds of CO2 from laundry, and " + shower + " pounds of CO2 from showering!"
+                                + "\n" + "That's a total of about " + total + " pounds for the week.");
 
                         historyList.add(total + " pounds for the week.");
                         saveData();
@@ -113,10 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 answerText2.setText("");
                 answerText3.setText("");
                 answerText4.setText("");
-//                answer1.setText("");
-//                testText.setText("");
-//                testText.setText("");
-//                testText.setText("");
+                testText.setText("");
             }
         });
     }
