@@ -252,7 +252,7 @@
         app:srcCompat="@drawable/leaveshandsremovebg" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/historyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="History"
