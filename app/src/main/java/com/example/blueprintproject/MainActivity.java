@@ -76,13 +76,18 @@ public class MainActivity extends AppCompatActivity {
 
                         historyList.add(total + " pounds for the week.");
                         saveData();
-                        // temporarily making this button take u to a new view as a test
-                        startHistory(historyList);
-
 
                     } catch (NumberFormatException e) {
                         testText.setText("Double check - it looks like you didn't enter a number somewhere!");
                     }
+                }
+            });
+
+            Button historyButton = findViewById(R.id.historyButton);
+            historyButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startHistory(historyList);
                 }
             });
 
