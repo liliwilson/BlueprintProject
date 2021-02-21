@@ -89,14 +89,14 @@ public class MainActivity extends AppCompatActivity {
             reset.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                answerText1.setText("");
-                answerText2.setText("");
-                answerText3.setText("");
-                answerText4.setText("");
-                testText.setText("");
-            }
-        });
-    }
+                    answerText1.setText("");
+                    answerText2.setText("");
+                    answerText3.setText("");
+                    answerText4.setText("");
+                    testText.setText("");
+                }
+            });
+        }
 
     public void startHistory(ArrayList<String> historyList) {
         Intent historyActivityIntent = new Intent(this, HistoryActivity.class);
