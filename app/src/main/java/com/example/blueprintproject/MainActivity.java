@@ -42,9 +42,16 @@ public class MainActivity extends AppCompatActivity {
                     int number3 = Integer.parseInt(answers.get(2));
                     int number4 = Integer.parseInt(answers.get(3));
 
-                    testText.setText("You emitted " + 0.96 * number1 + " pounds of CO2 from transit, " + .45 * number3 + " pounds of CO2 from laundry, and " + 1.95*number4 + " pounds from showering!");
+                    float transit = (float)Math.round((float) (number1 * 0.96)* 100) / 100;
+                    float bottles = (float)Math.round((float) (number2 * .182)* 100) / 100;
+                    float laundry = (float)Math.round((float) (number3 * 0.45)* 100) / 100;
+                    float shower = (float)Math.round((float) (number4 * 1.95)* 100) / 100;
+                    float total = (float)Math.round(transit + bottles + laundry + shower);
+
+                    testText.setText("You emitted " + transit + " pounds of CO2 from transit, " + bottles + " pounds of CO2 from plastic bottles " + laundry + " pounds of CO2 from laundry, and " + shower + " pounds from showering!"
+                    + "\n" + "That's a total of " + total + " pounds for the week.");
                 } catch (NumberFormatException e) {
-                    testText.setText("you didn't enter a number.");
+                    testText.setText("Double check - it looks like you didn't enter a number somewhere!");
                 }
             }
         });
