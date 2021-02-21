@@ -1,5 +1,6 @@
 package com.example.blueprintproject;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +36,11 @@ public class ClimateQuestionAdapter extends RecyclerView.Adapter<ClimateQuestion
     List<String> climateQuestions = new ArrayList<>();
 
     // maybe put a constructor here
+    public ClimateQuestionAdapter(Context context) {
+        // to be fancy make it read from a file
+        climateQuestions.add("Hello World.");
+    }
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
