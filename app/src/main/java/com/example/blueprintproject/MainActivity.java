@@ -35,6 +35,12 @@ public class MainActivity extends AppCompatActivity {
                 answers.add(answerText3.getText().toString());
                 answers.add(answerText4.getText().toString());
                 testText.setText(answers.get(0) + answers.get(1) + answers.get(2) + answers.get(3));
+
+                try {
+                    int x = Integer.parseInt(answers.get(0));
+                } catch (NumberFormatException e) {
+                    testText.setText("you didn't enter a number.");
+                }
             }
         });
 
