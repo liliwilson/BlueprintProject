@@ -24,7 +24,7 @@ public class HistoryActivity extends AppCompatActivity {
         buildRecyclerView();
 
         TextView funFact = findViewById(R.id.textView9);
-        String[] funFacts = {"It takes ~999 gallons of water to make a pair of jeans.", "1 pound of beef requires anywhere between 2000 and 8,000 gallons of water.", "Heating 1 gallon of water produces, on average, 0.18 lbs of CO2"};
+        String[] funFacts = {"1 pound of beef requires anywhere between 2000 and 8,000 gallons of water.", "Heating 1 gallon of water produces, on average, 0.18 lbs of CO2.", "Bring your own water bottle where you can to save plastic!", "Try switching out meat for a plant-based meal to decrease your emissions!", "Turn off lights and unplug technology when it isn't in use!", "Challenge yourself to cut down your food waste!", "Plant something new this week!", "Try to walk or bike instead of using a car whenever you can!"};
         Random rand = new Random();
         int position = rand.nextInt(funFacts.length);
         funFact.setText(funFacts[position]);
