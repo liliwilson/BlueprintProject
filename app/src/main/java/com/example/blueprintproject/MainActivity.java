@@ -1,13 +1,11 @@
 package com.example.blueprintproject;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.text.Editable;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
-import android.text.TextWatcher;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -17,11 +15,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    EditText editText1 = findViewById(R.id.answer1);
-    EditText editText2 = findViewById(R.id.answer2);
-    EditText editText3 = findViewById(R.id.answer3);
-    EditText editText4 = findViewById(R.id.answer4);
-
+    EditText answerText1;
+    EditText answerText2;
+    EditText answerText3;
+    EditText answerText4;
+    Button submit;
 }
 
     // Hi it's Ria :)
