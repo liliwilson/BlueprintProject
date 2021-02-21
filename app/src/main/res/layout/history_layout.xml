@@ -8,18 +8,13 @@
 
     <TextView
         android:id="@+id/answers"
-        android:layout_width="122dp"
-        android:layout_height="41dp"
+        android:layout_width="304dp"
+        android:layout_height="44dp"
         android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/total"
-        android:layout_width="174dp"
-        android:layout_height="40dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/answers"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
