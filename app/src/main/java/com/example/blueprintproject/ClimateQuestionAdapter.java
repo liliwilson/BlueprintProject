@@ -27,7 +27,7 @@ public class ClimateQuestionAdapter extends RecyclerView.Adapter<ClimateQuestion
             super(itemView);
 
             layout = itemView.findViewById(R.id.climate_question_layout);
-            question = itemView.findViewById(R.id.climateQuestion);
+            question = itemView.findViewById(R.id.textView2);
             answer = itemView.findViewById(R.id.climateInput);
         }
     }
@@ -49,7 +49,7 @@ public class ClimateQuestionAdapter extends RecyclerView.Adapter<ClimateQuestion
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         // get data to display onto screen
-        holder.question.setText(climateQuestions.get(position)); // access description from the map
+        holder.question.setText(climateQuestions.get(position));
     }
 
     // number of items to display in the recycler view
