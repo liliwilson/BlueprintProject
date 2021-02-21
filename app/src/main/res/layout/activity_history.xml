@@ -18,8 +18,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycle2"
-        android:layout_width="402dp"
-        android:layout_height="543dp"
+        android:layout_width="399dp"
+        android:layout_height="323dp"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,12 +27,22 @@
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="0dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="411dp"
+        android:layout_height="183dp"
         android:text="TextView"
         android:textAlignment="center"
         android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="449dp" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        app:layout_constraintBottom_toTopOf="@+id/textView9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recycle2" />
