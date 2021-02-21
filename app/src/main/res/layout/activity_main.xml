@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A9BA95"
+    android:background="#DBFFE4"
     tools:context=".MainActivity">
 
     <TextView
@@ -12,15 +12,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="10dp"
+        android:background="@color/colorDarkGreen"
         android:gravity="center"
         android:text="Carbon Footprint Calculator"
+        android:textColor="@color/white"
         android:textSize="34sp"
         android:textStyle="bold"
         android:typeface="monospace"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.78"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,6 +37,8 @@
         android:layout_marginEnd="8dp"
         android:gravity="center"
         android:text="Calculate your carbon footprint! Enter your info below and see how you're doing. If a category doesn't apply, enter 0."
+        android:textColor="@color/white"
+        android:background="@color/colorGreen"
         android:textSize="12sp"
         android:typeface="monospace"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,6 +53,8 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="2dp"
         android:text="How many miles did you drive this week?"
+        android:textStyle="bold"
+        android:background="@color/teal_200"
         android:typeface="monospace"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,6 +68,8 @@
         android:layout_marginTop="4dp"
         android:layout_marginEnd="2dp"
         android:text="How many plastic bottles did you throw away?"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/white"
         android:typeface="monospace"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.0"
@@ -75,7 +83,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="2dp"
+        android:background="@color/teal_200"
         android:text="How many loads of laundry did you run this week?"
+        android:textStyle="bold"
+        android:textColor="@color/white"
         android:typeface="monospace"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.0"
@@ -90,6 +101,8 @@
         android:layout_marginTop="4dp"
         android:layout_marginEnd="2dp"
         android:text="How long were your showers this week in total? (In minutes)"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/white"
         android:typeface="monospace"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="parent"
@@ -104,11 +117,14 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
+        android:textColor="@color/purple_500"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toTopOf="@+id/textView4" />
+        app:layout_constraintTop_toTopOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/answer2"
@@ -119,6 +135,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
+        android:textColor="@color/purple_500"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
@@ -134,6 +151,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
+        android:textColor="@color/purple_500"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="@+id/textView8"
         app:layout_constraintEnd_toEndOf="parent"
@@ -151,11 +169,13 @@
         android:layout_marginBottom="8dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:textColor="@color/purple_500"
         app:layout_constraintBottom_toBottomOf="@+id/textView10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -194,6 +214,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:text="------------------------------------------------------------------------------------------------------------"
+        android:textColor="@color/purple_500"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -209,6 +230,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/submitButton" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="130dp"
+        android:layout_height="139dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginEnd="145dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/earthleavesremovebg" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="128dp"
+        android:layout_height="135dp"
+        android:layout_marginTop="159dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answer4"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/leaveshandsremovebg" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
