@@ -39,7 +39,6 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.MyViewHo
 
             layout = itemView.findViewById(R.id.historylayout);
             answers = itemView.findViewById(R.id.answers);
-            total = itemView.findViewById(R.id.total);
         }
     }
 
