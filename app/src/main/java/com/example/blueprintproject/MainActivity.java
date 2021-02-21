@@ -42,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
                     int number3 = Integer.parseInt(answers.get(2));
                     int number4 = Integer.parseInt(answers.get(3));
 
-                    testText.setText("You emitted " + 0.96 * number1 + " pounds of CO2 from transit, " + .45 * number3 + " pounds of CO2 from laundry, and " + 1.95*number4 + " pounds from showering!");
+                    testText.setText("You emitted " + 0.96 * number1 + " pounds of CO2 from transit, " + 1.95 * number3 + " pounds of CO2 from laundry, and " + .45*number4 + " pounds from showering!");
                 } catch (NumberFormatException e) {
-                    testText.setText("you didn't enter a number.");
+                    testText.setText("You didn't enter a number - try again and resubmit!");
                 }
             }
         });
