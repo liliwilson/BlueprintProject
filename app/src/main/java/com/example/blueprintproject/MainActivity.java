@@ -8,7 +8,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 
@@ -25,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         Button button = findViewById(R.id.submitButton);
 
         TextView testText = findViewById(R.id.textViewTest);
+
+        File directory = this.getFilesDir(); // for later
 
         List<String> answers = new ArrayList<>();
         button.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +63,28 @@ public class MainActivity extends AppCompatActivity {
 
                     testText.setText("You emitted " + transit + " pounds of CO2 from transit, " + bottles + " pounds of CO2 from plastic bottles " + laundry + " pounds of CO2 from laundry, and " + shower + " pounds from showering!"
                     + "\n" + "That's a total of " + total + " pounds for the week.");
-                } catch (NumberFormatException e) {
+
+                    // save a json
+                    JSONObject jsonObject = new JSONObject();
+                    jsonObject.put("Answer1", number1);
+                    jsonObject.put("Answer2", number2);
+                    jsonObject.put("Answer3", number3);
+                    jsonObject.put("Answer4", number4);
+
+                    // get date
+                    Date date = Calendar.getInstance().getTime();
+                    DateFormat dateFormat = new SimpleDateFormat("yyyy_mm_dd hh_mm_ss");
+                    String filename = dateFormat.format(date) + ".json";
+
+                    // save file
+                    String userString = jsonObject.toString();
+                    File file = new File(directory,filename);
+                    FileWriter fileWriter = new FileWriter(file);
+                    BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                    bufferedWriter.write(userString);
+                    bufferedWriter.close();
+
+                } catch (NumberFormatException | JSONException | IOException e) {
                     testText.setText("Double check - it looks like you didn't enter a number somewhere!");
                 }
             }
