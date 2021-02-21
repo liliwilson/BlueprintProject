@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
                     int number2 = Integer.parseInt(answers.get(1));
                     int number3 = Integer.parseInt(answers.get(2));
                     int number4 = Integer.parseInt(answers.get(3));
+
+                    testText.setText("You emitted " + 0.96 * number1 + " pounds of CO2 from transit, " + 2.5 * number3 + " pounds of CO2 from laundry, and " + 1.95*number4 + " pounds from showering!");
                 } catch (NumberFormatException e) {
                     testText.setText("you didn't enter a number.");
                 }
