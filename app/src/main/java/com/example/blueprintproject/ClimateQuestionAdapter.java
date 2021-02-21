@@ -3,6 +3,7 @@ package com.example.blueprintproject;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,8 +19,8 @@ public class ClimateQuestionAdapter extends RecyclerView.Adapter<ClimateQuestion
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         // list all the things you use in your layout
         public ConstraintLayout layout;
-        public ImageView question;
-        public TextView answer;
+        public TextView question;
+        public EditText answer;
 
         // set all of them equal to the find view by id
         public MyViewHolder(@NonNull View itemView) {
